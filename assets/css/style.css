@@ -11,15 +11,13 @@ body {
 }
 
 h1 {
-    margin-top: 20px;
     margin-bottom: 20px;
     color: #aae3d6;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 h2 {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #aae3d6;
     font-size: 2rem;
 }
@@ -39,11 +37,12 @@ h2 {
     line-height: 150px;
     font-size: 6rem;
     border-radius: 10px;
-    color: #00ffd0;
+    color: #056252;
 }
 
 .case:hover {
     background-color: #1d7a9d;
+    color: #00ff77;
 }
 
 button {

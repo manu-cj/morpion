@@ -19,10 +19,10 @@ const gagne = () => `Le joueur ${joueurActif} a gagné`
 const egalité = () => "Egalité"
 const tourJoueur = () => `C'est au tour du joueur ${joueurActif}`
 
-h2.innerHTML = tourJoueur()
+h2.innerHTML = tourJoueur();
 
-document.querySelectorAll(".case").forEach(cell => cell.addEventListener("click", gestionClicCase))
-document.querySelector("#reset").addEventListener("click", reset)
+document.querySelectorAll(".case").forEach(cell => cell.addEventListener("click", gestionClicCase));
+document.querySelector("#reset").addEventListener("click", reset);
 
 
 //click case pour recupèrer l'index de la case
@@ -30,7 +30,7 @@ function gestionClicCase() {
     const indexCase = parseInt(this.dataset.index);
 
     if (etatJeu[indexCase] != "" || !jeuActif) {
-        return
+        return;
     }
 
     etatJeu[indexCase] = joueurActif;
@@ -40,23 +40,23 @@ function gestionClicCase() {
 }
 
 function verifGagne() {
-    let tourGagnant = false
+    let tourGagnant = false;
 
     for(let conditionVictoire of conditionsVictoire) {
-        let val1 = etatJeu[conditionVictoire[0]]
-        let val2 = etatJeu[conditionVictoire[1]]
-        let val3 = etatJeu[conditionVictoire[2]]
+        let val1 = etatJeu[conditionVictoire[0]];
+        let val2 = etatJeu[conditionVictoire[1]];
+        let val3 = etatJeu[conditionVictoire[2]];
         if (val1==="" || val2===""|| val3==="") {
-            continue
+            continue;
         }
         if (val1=== val2 && val2===val3) {
-            tourGagnant = true
+            tourGagnant = true;
             break;
         }
     }
     if (tourGagnant) {
-        h2.innerHTML = gagne()
-        jeuActif = false
+        h2.innerHTML = gagne();
+        jeuActif = false;
         return
     }
 
@@ -67,7 +67,7 @@ function verifGagne() {
     }
 
     joueurActif = joueurActif==="x" ? "o" : "x";
-    h2.innerHTML = tourJoueur()
+    h2.innerHTML = tourJoueur();
 }
 
 function reset(){
